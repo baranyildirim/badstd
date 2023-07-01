@@ -1,0 +1,34 @@
+{
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/*.pb.go": true,
+    "**/.venv": true,
+    "**/__pycache__": true,
+    "**/db.sqlite3": true,
+    "**/.mypy_cache": true,
+    "**/node_modules": true,
+    "bazel-*": true
+  },
+  "files.associations": {
+    "*.h": "cpp",
+    "*.cc": "cpp",
+    "*.bazel": "bazel",
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "editor.rulers": [80,120],
+  "clangd.arguments": [
+    "--header-insertion=never",
+    "--query-driver=**"
+  ]
+}

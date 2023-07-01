@@ -1,0 +1,19 @@
+[[package]]
+name = "cpplint"
+version = "1.6.1"
+description = "Automated checker to ensure C++ files follow Google's style guide"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.extras]
+dev = ["flake8 (>=4.0.1)", "flake8-polyfill", "pylint (>=2.11.0)", "tox (>=3.0.0)", "tox-pyenv", "importlib-metadata (>=0.12)", "pytest (>=4.6,<5.0)", "pytest-cov", "pyparsing (<3)", "zipp (<=0.5.1)", "configparser (<=3.7.4)", "testfixtures"]
+test = ["pytest (>=4.6,<5.0)", "pytest-cov", "pyparsing (<3)", "zipp (<=0.5.1)", "configparser (<=3.7.4)", "testfixtures"]
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "e66434c6be4614c06f39286066db9814c397a8550fc443776dd9c87749663f80"
+
+[metadata.files]
+cpplint = []
