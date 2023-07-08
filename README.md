@@ -1,14 +1,15 @@
 # HFTBox
 
-HFTBox is an attempt at developing a high frequency trading toolkit  in C++.
+HFTBox is an attempt at developing a high frequency trading toolkit in C++.
 HFTBox provides the following:
 * Price based and index based order book - with recovery snapshots and incremental updates. 
-* Order matching engine.
+* Order matching engine, with FIX server.
 * Various mathemetical models for option pricing (Black-Scholes etc.)
+* Simulated exchange that can be used for testing based on existing data.
 
-The library aims to have as few dependencies as possible. Most of the dependencies are for auxiliary functionality.
-The list of dependencies is as follows:
-* Matplotlibcpp - Used for graphing.
+
+
+The library currently has no dependencies.
 
 ## Installation
 
