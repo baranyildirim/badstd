@@ -1,5 +1,5 @@
 cc_library(
-    name = "llqa",
+    name = "hftbox",
     srcs = glob(["**/*.cc"]),
     hdrs = glob(["**/*.h"]),
     visibility = ["//visibility:public"],
