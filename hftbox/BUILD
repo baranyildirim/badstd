@@ -1,6 +1,6 @@
 cc_library(
     name = "hftbox",
-    srcs = glob(["**/*.cc"]),
+    srcs = glob(["**/*.cpp"]),
     hdrs = glob(["**/*.h"]),
     visibility = ["//visibility:public"],
 )

@@ -1,9 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
-# Bazel WORKSPACE file for hftbox.
-workspace(name = "com_github_baranyildirim_hftbox")
-
 # Bazel Compilation Database
 # Hedron's Compile Commands Extractor for Bazel
 # https://github.com/hedronvision/bazel-compile-commands-extractor

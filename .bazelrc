@@ -1,0 +1,2 @@
+# Use clang instead of gcc
+build --repo_env='CC=clang'

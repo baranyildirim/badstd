@@ -15,8 +15,8 @@ refresh_compile_commands(
     # Specify the targets of interest.
     # For example, specify a dict of targets and any flags required to build.
     targets = {
-        "//llqa:llqa": "--cxxopt='-std=c++17'",
-        "//cmd:main": "--cxxopt='-std=c++17'",
+        "//hftbox:hftbox": "--cxxopt='-std=c++20'",
+        "//cmd:cmd": "--cxxopt='-std=c++20'",
     },
     # No need to add flags already in .bazelrc. They're automatically picked up.
     # If you don't need flags, a list of targets is also okay, as is a single target string.
