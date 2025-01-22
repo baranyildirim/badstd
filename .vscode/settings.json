@@ -24,7 +24,7 @@
     "*.bazel": "bazel",
   },
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+    "source.organizeImports": "explicit"
   },
   "editor.rulers": [80,120],
   "clangd.arguments": [
