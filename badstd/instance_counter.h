@@ -9,7 +9,7 @@ class InstanceCounter {
   InstanceCounter(const InstanceCounter& other);
   InstanceCounter& operator=(const InstanceCounter& other);
 
-  static int count();
+  static int Count();
 
  private:
   static inline std::atomic<int> counter_{0};

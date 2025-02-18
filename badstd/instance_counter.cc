@@ -12,4 +12,4 @@ InstanceCounter& InstanceCounter::operator=(const InstanceCounter& other) {
   return *this;
 }
 
-int InstanceCounter::count() { return InstanceCounter::counter_; }
+int InstanceCounter::Count() { return InstanceCounter::counter_; }
