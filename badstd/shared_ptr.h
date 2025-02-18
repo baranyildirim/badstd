@@ -3,41 +3,50 @@
 #include <atomic>
 
 template <class T>
-class ControlBlock {
-  T* ptr{nullptr};
-  std::atomic<int> count{1};
-};
-
-template <class T>
 class SharedPtr {
  public:
-  SharedPtr(T* ptr) : blk(new ControlBlock<T>(ptr)) {}
-  ~SharedPtr() { Dispose(); }
+  SharedPtr(T* ptr) : blk(new ControlBlock{ptr}) {}
+  ~SharedPtr() {
+    Dispose();
+    blk = nullptr;
+  }
+
+  SharedPtr(const SharedPtr& other) {
+    blk = other.blk;
+    IncrementCount();
+  }
 
   SharedPtr& operator=(const SharedPtr& other) {
-    if (this == &other) return *this;
-    Dispose();
-    blk = other;
-    blk->count++;
+    if (this == &other) {
+      IncrementCount();
+    } else {
+      Dispose();
+      blk = other.blk;
+      IncrementCount();
+    }
     return *this;
   }
 
   SharedPtr& operator=(SharedPtr&& other) {
-    if (this == &other) {
-      other.blk = nullptr;
-      return *this;
-    }
+    if (this == &other) return *this;
     Dispose();
-    blk->count++;
+    blk = other.blk;
+    other.blk = nullptr;
     return *this;
+  }
+
+  SharedPtr(SharedPtr&& other) {
+    blk = other.blk;
+    other.blk = nullptr;
   }
 
   SharedPtr* operator*() { return blk->ptr; }
   SharedPtr* operator->() { return blk->ptr; }
 
+ protected:
   void Dispose() {
     if (blk != nullptr) {
-      blk->count--;
+      --(blk->count);
       if (blk->count == 0) {
         delete blk->ptr;
         delete blk;
@@ -45,6 +54,18 @@ class SharedPtr {
     }
   }
 
+  void IncrementCount() {
+    if (blk != nullptr) {
+      ++(blk->count);
+    }
+  }
+
  private:
-  ControlBlock<T>* blk{nullptr};
+  class ControlBlock {
+   public:
+    T* ptr{nullptr};
+    std::atomic<int> count{1};
+  };
+
+  ControlBlock* blk{nullptr};
 };

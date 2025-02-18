@@ -85,7 +85,8 @@ inline std::vector<std::vector<int>> sort_all(const EdgeList& graph) {
       self(self, curr_solution, curr_start_nodes, curr_node_deps,
            curr_node_edges);
     }
-    if (std::all_of(
+    if (solution.size() == node_deps.size() &&
+        std::all_of(
             node_deps.begin(), node_deps.end(),
             [](const auto& nodeAndDeps) { return nodeAndDeps.second.empty(); }))
       all_sorts.push_back(solution);
