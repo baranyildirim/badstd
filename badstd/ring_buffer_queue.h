@@ -14,7 +14,7 @@ class RingBufferQueue {
     return false;
   }
 
-  std::optional<T> Pop(const T& t) {
+  std::optional<T> Pop() {
     if (IsEmpty()) return std::nullopt;
     auto element = queue_[head_ % capacity_];
     ++head_;
